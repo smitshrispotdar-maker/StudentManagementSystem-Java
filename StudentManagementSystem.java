@@ -31,11 +31,26 @@ class Student {
         this.marks = marks;
     }
 
+    // New Method: Get Grade
+    public String getGrade() {
+        if (marks >= 90)
+            return "A+";
+        else if (marks >= 80)
+            return "A";
+        else if (marks >= 70)
+            return "B";
+        else if (marks >= 60)
+            return "C";
+        else
+            return "F";
+    }
+
     // Display Student Details
     public void displayStudent() {
         System.out.println("Student ID : " + studentId);
         System.out.println("Name       : " + name);
         System.out.println("Marks      : " + marks);
+        System.out.println("Grade      : " + getGrade());
         System.out.println("--------------------------");
     }
 }
@@ -109,11 +124,14 @@ class StudentManagement {
 }
 
 public class StudentManagementSystem {
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         StudentManagement sm = new StudentManagement();
 
         while (true) {
+
             System.out.println("\n===== STUDENT MANAGEMENT SYSTEM =====");
             System.out.println("1. Add Student");
             System.out.println("2. Display All Students");
@@ -148,12 +166,14 @@ public class StudentManagementSystem {
                 case 3:
                     System.out.print("Enter Student ID to Search: ");
                     id = sc.nextInt();
+
                     sm.searchStudent(id);
                     break;
 
                 case 4:
                     System.out.print("Enter Student ID to Delete: ");
                     id = sc.nextInt();
+
                     sm.deleteStudent(id);
                     break;
 
