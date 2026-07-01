@@ -1,4 +1,4 @@
-//Use of OOPs concept
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
